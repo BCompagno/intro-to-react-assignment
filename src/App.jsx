@@ -1,4 +1,6 @@
 import "./styles/App.css";
+import UserProfile from "./UserProfile";
+
 function App() {
   //The array of users to render in the assignment
   const users = [
@@ -49,11 +51,15 @@ function App() {
         <h1 className="">User Profiles:</h1>
       </header>
       <div className="user-profile-wrapper">
-        {/* Render the array of users using the UserProfile in this div */}
-
+       {/* Render the array of users using the UserProfile in this div */}
+              {users.map((user,index) => (
+               <UserProfile key={index} user={user} />
+              ))}
       </div>
     </div>
   );
 }
+
+
 
 export default App;
